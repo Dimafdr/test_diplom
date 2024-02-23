@@ -14,7 +14,7 @@ Django, React, Redux.
 - клонируем репозиторий
 ```
 $ git clone https://github.com/Dimafdr/test_diplom.git
-$ cd netology-cloud-storage
+$ cd test_diplom
 ```
 ### База данных
 
@@ -109,7 +109,7 @@ $ sudo systemctl status nginx
 - клонируем репозиторий и заходим в него
 ```
 $ git clone https://github.com/Dimafdr/test_diplom.git
-$ cd netology-cloud-storage
+$ cd test_diplom
 ```
 ### База данных
 - не забудем установить базу данных, используем пользователя `postgres`
