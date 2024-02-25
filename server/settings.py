@@ -14,8 +14,8 @@ DEBUG = True
 BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = os.getenv('DJANGO_SECRET_KEY')
 
-BASE_HOST = '127.0.0.1'
-BASE_URL = 'http://127.0.0.1:8000'
+BASE_HOST = '89.104.70.129'
+BASE_URL = 'http://89.104.70.129:8000'
 
 ALLOWED_HOSTS = ['*']
 
