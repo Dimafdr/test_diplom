@@ -42,10 +42,9 @@ LOGIN_URL = '/login/'
 LOGIN_REDIRECT_URL = '/'
 
 INSTALLED_APPS = [
-    'django.contrb',
     'django.contrib.admin',
     'django.contrib.auth',
-    'django.contrb.contenttypes',
+    'django.contrib.contenttypes',
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
@@ -90,7 +89,7 @@ WSGI_APPLICATION = 'server.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.postgresql',
+        'ENGINE': 'django.db.backends.postgresql_psycopg2',
         'NAME': os.getenv('POSTGRES_DB'),
         'USER': os.getenv('POSTGRES_USER'),
         'PASSWORD': os.getenv('POSTGRES_PASSWORD'),
