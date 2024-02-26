@@ -168,8 +168,8 @@ After=network.target
 [Service]
 User=dima
 Group=www-data
-WorkingDirectory=/home/<unix_username>/netology-cloud-storage
-ExecStart=/home/<unix_username>/netology-cloud-storage/env/bin/gunicorn --access-logfile - --workers=3 --bind unix:/home/<unix_username>/netology-cloud-storage/server/gunicorn.sock server.wsgi:application
+WorkingDirectory=/home/<unix_username>/test_diplom
+ExecStart=/home/<unix_username>/test_diplom/env/bin/gunicorn --access-logfile - --workers=3 --bind unix:/home/<unix_username>/test_diplom/server/gunicorn.sock server.wsgi:application
 
 [Install]
 WantedBy=multi-user.target
@@ -181,7 +181,7 @@ WantedBy=multi-user.target
 ```
 - пишем конфиг Nginx
 ```
-(env) $ sudo nano /etc/nginx/sites-available/netology-cloud-storage
+(env) $ sudo nano /etc/nginx/sites-available/test_diplom
 ```
 В файле пишем следующие настройки (вместо `<unix_username>` надо подставить ваше имя юзера):
 ```
@@ -190,31 +190,31 @@ server {
 	server_name 82.97.243.191;
 
 	location /static/ {
-		root /home/<unix_username>/netology-cloud-storage;
+		root /home/<unix_username>/test_diplom;
 	}
         
         location /static/js/ {
-        alias /home/<unix_username>/netology-cloud-storage/build/static/js/;
+        alias /home/<unix_username>/test_diplom/build/static/js/;
     }
 
        location /static/css/ {
-        alias /home/<unix_username>/netology-cloud-storage/build/static/css/;
+        alias /home/<unix_username>/test_diplom/build/static/css/;
     }
 
 	location ~ ^/(api|login|register|logout|s)/ {
         include proxy_params;
-        proxy_pass http://unix:/home/<unix_username>/netology-cloud-storage/server/gunicorn.sock;
+        proxy_pass http://unix:/home/<unix_username>/test_diplom/server/gunicorn.sock;
     }
 
 	location / {
-		root /home/<unix_username>/netology-cloud-storage/build/;
+		root /home/<unix_username>/test_diplom/build/;
         try_files $uri /index.html;
 	}
 }
 ```
 - делаем ссылку на него
 ```
-(env) $ sudo ln -s /etc/nginx/sites-available/netology-cloud-storage /etc/nginx/sites-enabled
+(env) $ sudo ln -s /etc/nginx/sites-available/test_diplom /etc/nginx/sites-enabled
 ```
 - открываем порты и даем права Nginx
 ```
