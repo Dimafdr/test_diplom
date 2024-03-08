@@ -20,18 +20,18 @@ BASE_URL = 'http://89.104.70.129:8000'
 ALLOWED_HOSTS = ['*']
 
 CSRF_TRUSTED_ORIGINS = [
-    'http://localhost:3000',
-    'http://127.0.0.1:3000',
-    'http://127.0.0.1:8000',
-    'http://0.0.0.0:3000',
+    'http://89.104.70.129:3000',
+    'http://89.104.70.129:3000',
+    'http://89.104.70.129:8000',
+    'http://89.104.70.129:3000',
     os.getenv('REACT_APP_API_URL')
 ]
 
 CORS_ALLOWED_ORIGINS = [
-    'http://localhost:3000',
-    'http://127.0.0.1:3000',
-    'http://127.0.0.1:8000',
-    'http://0.0.0.0:3000',
+    'http://89.104.70.129:3000',
+    'http://89.104.70.129:3000',
+    'http://89.104.70.129:8000',
+    'http://89.104.70.129:3000',
     os.getenv('REACT_APP_API_URL')
 ]
 
