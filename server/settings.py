@@ -17,7 +17,7 @@ SECRET_KEY = os.getenv('DJANGO_SECRET_KEY')
 BASE_HOST = '89.104.70.129'
 BASE_URL = 'http://89.104.70.129:8000'
 
-ALLOWED_HOSTS = ['89.104.70.129']
+ALLOWED_HOSTS = ['*']
 
 CSRF_TRUSTED_ORIGINS = [
     'http://89.104.70.129:3000',
@@ -89,7 +89,7 @@ WSGI_APPLICATION = 'server.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.postgresql',
+        'ENGINE': 'django.db.backends.postgresql_psycopg2',
         'NAME': os.getenv('POSTGRES_DB'),
         'USER': os.getenv('POSTGRES_USER'),
         'PASSWORD': os.getenv('POSTGRES_PASSWORD'),
