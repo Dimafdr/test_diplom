@@ -10,13 +10,13 @@ from accounts.views import login_view, signup_view, logout_view
 
 
 urlpatterns = [
-    path('/admin/', admin.site.urls),
-    path('/api/', include(router.urls)),
-    path('/s/<str:hash>/', redirect_to_file, name='redirect_to_file'),
+    path('admin/', admin.site.urls),
+    path('api/', include(router.urls)),
+    path('s/<str:hash>/', redirect_to_file, name='redirect_to_file'),
     
-    path('/login/', login_view, name='login'),
-    path('/register/', signup_view, name='register'),
-    path('/logout/', logout_view, name='logout'),
+    path('login/', login_view, name='login'),
+    path('register/', signup_view, name='register'),
+    path('logout/', logout_view, name='logout'),
 ]
 
 urlpatterns += static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
