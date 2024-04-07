@@ -187,18 +187,18 @@ WantedBy=multi-user.target
 ```
 server {
 	listen 80;
-	server_name 82.97.243.191;
+	server_name 80.78.243.26;
 
 	location /static/ {
 		root /home/<unix_username>/test_diplom;
 	}
         
         location /static/js/ {
-        alias /home/<unix_username>/test_diplom/build/static/js/;
+        alias /home/<unix_username>/test_diplom/static/js/;
     }
 
        location /static/css/ {
-        alias /home/<unix_username>/test_diplom/build/static/css/;
+        alias /home/<unix_username>/test_diplom/static/css/;
     }
 
 	location ~ ^/(api|login|register|logout|s)/ {
